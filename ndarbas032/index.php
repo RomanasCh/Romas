@@ -1,3 +1,3 @@
 <?php
-    require 'stulpeliuSuma.php';
+    require 'istrizainiuSumos.php';
 ?>
