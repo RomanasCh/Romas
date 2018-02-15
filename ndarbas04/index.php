@@ -1,3 +1,3 @@
 <?php
-    require 'lyginisNelyginis_Fe.php';
+    require 'trikampioAnalize.php';
 ?>
