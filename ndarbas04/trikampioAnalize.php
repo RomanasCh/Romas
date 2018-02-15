@@ -26,7 +26,7 @@
            }
        }
 
-       echo (implode(", ", $mas) . $zinia . $tipas . '.' . $plotas . '.'  . '<br>');
+       echo implode(", ", $mas) . $zinia . $tipas . '.' . $plotas . '.'  . '<br>';
 
     }
 
