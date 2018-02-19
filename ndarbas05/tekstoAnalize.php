@@ -18,8 +18,10 @@
     echo '<h4>Balsių paieška tekste. v.2 naudojant <code><em>substr_count()</em></code></h4>';
 
     $c = 0;
+    $aC = strtoupper($vardas);
     foreach ($vow as $val) {
-        $c += substr_count(strtoupper($vardas), $val);
+        $c += substr_count($aC, $val);
     }
-    echo 'Balsiu tekste: ' . $c .'<br>';
+    echo 'Balsiu tekste yra: ' . $c .'<br>';
+    
 ?>
