@@ -1,4 +1,3 @@
 <?php
-    require 'arrayKeyAnalyse.php';
+    require 'tekstoAnalize.php';
 ?>
-
