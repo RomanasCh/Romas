@@ -1,3 +1,3 @@
 <?php
-    require 'tekstoAnalize.php';
+    require 'masyvoRikiavimas.php';
 ?>
