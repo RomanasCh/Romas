@@ -1,3 +1,3 @@
 <?php
-require 'vidurkiuSkaiciavimas.php';
+require 'tobuloRadimas.php';
 ?>
