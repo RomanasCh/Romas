@@ -13,12 +13,7 @@
     function tobulaSkaicius($s) {
 
         $dal = dalikliuRadimas($s);
-        if (array_sum($dal) === $s) {
-          return true;
-        }
-        else {
-            return false;
-        }
+          return  array_sum($dal) === $s;
     }
 
     echo '<h4>Tobulo skaičiaus radimas iki 1000</h4>';
