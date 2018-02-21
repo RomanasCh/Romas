@@ -1,3 +1,3 @@
 <?php
-require 'elementuPoros.php';
+require 'stulpeliuSumos2.php';
 ?>
