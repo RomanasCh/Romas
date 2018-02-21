@@ -1,5 +1,3 @@
 <?php
-require 'skaliarineDaugyba.php';
-require 'masyvuManipuliacija.php';
-require 'duomenuIsmetimas.php';
+require 'elementuPoros.php';
 ?>
