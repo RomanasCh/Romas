@@ -3,3 +3,4 @@
         return intval(date('Y')) - $mas['gmetai'];
     }
 ?>
+
