@@ -1,4 +1,4 @@
 <?php
-require 'vyruMoteruPoros.php';
+require 'vyruTikMoterugrupes.php';
 
 ?>
