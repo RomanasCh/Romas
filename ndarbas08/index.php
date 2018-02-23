@@ -1,4 +1,2 @@
 <?php
-require 'vyruTikMoterugrupes.php';
-
-?>
+require 'pazimiuVidurkiai.php';
