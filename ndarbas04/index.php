@@ -1,4 +1,0 @@
-<?php
-    require 'trikampioAnalize.php';
-?>
-
