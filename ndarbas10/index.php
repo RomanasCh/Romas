@@ -1,2 +1,2 @@
 <?php
-require 'startMokinys.php';
+require 'startMokinys2.php';
