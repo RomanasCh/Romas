@@ -1,2 +1,2 @@
 <?php
-require 'startZmogus.php';
+require 'startAuto.php';
