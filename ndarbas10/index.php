@@ -1,2 +1,2 @@
 <?php
-require 'startAuto.php';
+require 'startMokinys.php';
