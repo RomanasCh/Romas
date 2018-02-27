@@ -1,2 +1,2 @@
 <?php
-require 'startSuo.php';
+require 'startIstorija.php';
