@@ -1,18 +1,16 @@
 <?php
 
-   function masTeig($mas) {
-       $l = count($mas);
-       $l--;
-       $i = 0;
-       foreach (array_reverse($mas) as $k=> $v) {
-//           var_dump($k,$mas[$l-$k+$i], $v);
-           if ($v <= 0) {
+   function masTeigPrieky($mas) {
+       $len = count($mas) -1;
+       $shift = 0;
+       foreach (array_reverse($mas) as $key=> $val) {
+           if ($val <= 0) {
                continue;
            }
-           $t = $v;
-           unset($mas[$l-$k+$i]);
+           $t = $val;
+           unset($mas[$len-$key+$shift]);
            array_unshift($mas, $t);
-           $i++;
+           $shift++;
        }
         return $mas;
    }
@@ -21,7 +19,7 @@
 
     echo '<h4>Masyvo elementu grupavimas</h4>';
     echo 'Pradinis masyvas = ' . implode(", ", $a) . '<br>';
-    $a = masTeig($a);
+    $a = masTeigPrieky($a);
     echo 'Perdarytas masyvas = ' . implode(", ", $a);
 ?>
 
