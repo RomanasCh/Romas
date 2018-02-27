@@ -1,2 +1,2 @@
 <?php
-require 'startIstorija.php';
+require 'startMokinys2.php';
