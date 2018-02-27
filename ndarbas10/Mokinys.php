@@ -23,5 +23,5 @@ class Mokinys extends Trimestras
         foreach ($this->trimestras as $pazym) {
             $rez += $pazym;
         }
-        return $rez /= count($this->trimestras);}
+        return $rez / count($this->trimestras);}
 }

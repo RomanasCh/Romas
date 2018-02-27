@@ -10,10 +10,8 @@ $mokiniai = [
 echo '<h4>Pažymių vidurkiai, mžėjimo tvarka</h4>';
 
 $rezult = [];
-$i=0;
 foreach ($mokiniai as $mokinys) {
-    $rezult[$i] = [round($mokinys->vidurkis(),2),$mokinys->vardas, $mokinys->pavarde];
-    $i++;
+    $rezult[] = [round($mokinys->vidurkis(),2),$mokinys->vardas, $mokinys->pavarde];
 }
 array_multisort($rezult,SORT_DESC);
 ?>
