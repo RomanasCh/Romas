@@ -20,11 +20,11 @@ class Ivykis
     }
 
     /**
-     * @return bool|DateInterval
+     * @return string
      */
     public function duokDienuSkaic() {
 
-        return $this->data->diff(new \DateTime());
+        return $this->data->diff(new \DateTime())->format('%r%a');
     }
 
 }

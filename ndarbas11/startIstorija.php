@@ -25,7 +25,7 @@ echo '<h4>Įvykių istorija</h4>';
                     <?= $ivykis->pavadinimas ?>
                 </td>
                 <td>
-                    <?= $ivykis->duokDienuSkaic()->format('%r%a') ?>
+                    <?= $ivykis->duokDienuSkaic() ?>
                 </td>
             </tr>
        <?php } ?>
