@@ -18,4 +18,8 @@ class Radar
         $this->time = $time;
 
     }
+
+    public function duokGreiti() {
+        return round(($this->distance * 3.6) / $this->time, 1);
+    }
 }

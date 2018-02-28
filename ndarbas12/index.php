@@ -1,2 +1,2 @@
 <?php
-require 'startRadar.php';
+require 'startRadar2.php';
