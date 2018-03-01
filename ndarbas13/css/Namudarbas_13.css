@@ -1,0 +1,35 @@
+html {
+  background-size: cover;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px; }
+
+body {
+  background-color: rgba(25, 53, 73, 0.8);
+  font-size: 2rem;
+  display: inline-block;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  color: #efefef;
+  margin: auto; }
+
+table {
+  margin-top: 2px;
+  width: 100%;
+  font-size: 0.7em; }
+
+table, th, td {
+  border: 1px solid rgba(51, 51, 51, 0.7);
+  text-align: center; }
+
+th {
+  font-weight: 500; }
+
+td {
+  font-weight: 300;}
+
+td:nth-of-type(2),
+td:nth-of-type(3),
+td:nth-of-type(5) {
+  text-align: left; }
