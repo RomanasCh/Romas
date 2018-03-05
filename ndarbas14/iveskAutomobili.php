@@ -9,14 +9,7 @@ if (!isset($_SESSION['automobiliai'])) {
 
 }
 
-if (!isset($filtr)) {
-    if (isset($_POST['filtras'])) {
-        $filtr = new Filtras($_POST['filtras']);
-    }
-    else {
-        $filtr = new Filtras('');
-    }
-}
+$filtr = new Filtras(isset($_GET['filtras']) ? $_GET['filtras'] : '');
 
 if ($_SERVER['REQUEST_METHOD'] =='POST') {
     if (isset($_POST['data'], $_POST['numeris'], $_POST['atstumas'], $_POST['laikas']) && strlen($_POST['data']) > 0) {
@@ -27,19 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] =='POST') {
             $_POST['laikas']
         ];
     }
-
-    if (isset($_POST['filtras']))  {
-        $filtr->setFiltroReiksme($_POST['filtras']);
-    }
-    else {
-        $filtr->setFiltroReiksme('');
-    }
-
 }
 
-if (!isset($duomenys)) {
-    $duomenys=[];
-}
+$duomenys=[];
 
 foreach ($_SESSION['automobiliai'] as $auto) {
     $duomenys[] = new Radar(new \DateTime($auto[0]), $auto[1], $auto[2], $auto[3]);
@@ -83,7 +66,7 @@ usort($duomenys, 'masRikiuokGreiti');
          </form>
         </div>  <!--  row 1 -->
         <div class="row"> <!--  row 2 -->
-         <form class="row" id="form2" method="post">
+         <form class="row" id="form2" method="get">
             <label class="textin" for="filtras">Filtras:</label>
             <input type="text" class="form-control" id="filtras" name="filtras" placeholder="pvz.: ABC">
             <br>
