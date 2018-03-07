@@ -22,9 +22,9 @@ usort($duomenys, 'masRikiuokGreiti');
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Namu darbas Nr 14">
+    <meta name="description" content="Namu darbas Nr 15">
     <meta name="author" content="">
-    <title>Namu darbas Nr 14</title>
+    <title>Namu darbas Nr 15</title>
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" rel="stylesheet">
     <link href="./css/Namudarbas_13.css" rel="stylesheet">
@@ -55,7 +55,7 @@ usort($duomenys, 'masRikiuokGreiti');
         <div class="row"> <!--  row 2 -->
          <form class="row" id="form2" method="get">
             <label class="textin" for="filtras">Filtras:</label>
-            <input type="text" class="form-control" id="filtras" name="filtras" placeholder="pvz.: ABC">
+            <input type="text" class="form-control" id="filtras" name="filtras" placeholder="pvz.: ABC" value="<?= isset($_GET['filtras']) ? $_GET['filtras'] : '' ?>">
             <br>
             <button type="submit" class="btn btn-secondary" form="form2">Filtras</button>
          </form>
@@ -63,8 +63,8 @@ usort($duomenys, 'masRikiuokGreiti');
            <div class="row"> <!--  row 3 -->
             <nav >
                 <ul class="pagination pagination-sm mt-3">
-                   <li class="page-item"><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/?page=1">&laquo;</a></li>
-                   <li class="page-item "><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/?page=2">&raquo;</a></li>
+                   <li class="page-item"><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/?page=<?=  prevPage($page) ?>">&laquo;</a></li>
+                   <li class="page-item "><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/?page=<?=  nextPage($limit, count($duomenys), $page) ?>">&raquo;</a></li>
                 </ul>
             </nav>
 
