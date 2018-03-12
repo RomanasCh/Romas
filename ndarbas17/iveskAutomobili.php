@@ -18,23 +18,23 @@ require_once 'dbRadarEdit.php';
   </head>
   <body>
     <main role="main">
-     <div class="container">
+     <div class="container mb-4 pb-4">
        <section>
         <h2>Duomenų rikiavimas pagal greitį</h2>
         <div class="row"> <!--  row 1 -->
   
          <form class="row" id="form1" method="post">
             <label class="textin" for="data">Data: </label>
-            <input type="text" class="form-control" id="data" name="data" placeholder="pvz.: 2018-01-7 15:00" value="<?= isset($autoM) ? $autoM[1] : ''?>">
+            <input type="text" class="form-control" id="data" name="data" placeholder="pvz.: 2018-01-7 15:00" value="<?= isset($autoM) ? getMasElement($autoM,'date') : '' ?>">
             <br>
             <label class="textin" for="numeris">Numeris: </label>
-            <input type="text" class="form-control" id="numeris" name="numeris" placeholder="pvz.: ABC123" value="<?= isset($autoM) ? $autoM[2] : ''?>">
+            <input type="text" class="form-control" id="numeris" name="numeris" placeholder="pvz.: ABC123" value="<?= isset($autoM) ? getMasElement($autoM,'number') : '' ?>">
             <br>
             <label class="textin" for="atstumas">Atstumas: </label>
-            <input type="text" class="form-control" id="atstumas" name="atstumas" placeholder="pvz.: 10000" value="<?= isset($autoM) ? $autoM[3] : ''?>">
+            <input type="text" class="form-control" id="atstumas" name="atstumas" placeholder="pvz.: 10000" value="<?= isset($autoM) ? getMasElement($autoM, 'distance') : '' ?>">
             <br>
             <label class="textin" for="laikas">Laikas:</label>
-            <input type="text" class="form-control" id="laikas" name="laikas" placeholder="pvz.: 2000" value="<?= isset($autoM) ? $autoM[4] : ''?>">
+            <input type="text" class="form-control" id="laikas" name="laikas" placeholder="pvz.: 2000" value="<?= isset($autoM) ? getMasElement($autoM, 'time') : '' ?>">
             <br>
             <input type="hidden" name="id" value="<?= isset($_GET['edit']) ? $_GET['edit'] : ''?>">
             <button type="submit" class="btn btn-secondary" form="form1">Pridėti</button>
@@ -44,7 +44,6 @@ require_once 'dbRadarEdit.php';
          <form class="row" id="form2" method="get">
             <label class="textin" for="filtras">Filtras:</label>
             <input type="text" class="form-control" id="filtras" name="filtras" placeholder="pvz.: ABC" value="<?= isset($_GET['filtras']) ? $_GET['filtras'] : '' ?>">
-            <input type="hidden" name="page" value="<?= isset($_GET['page']) ? $_GET['page'] : ''?>"
             <br>
             <button type="submit" class="btn btn-secondary" form="form2">Filtras</button>
          </form>
@@ -52,12 +51,12 @@ require_once 'dbRadarEdit.php';
            <div class="row"> <!--  row 3 -->
             <nav >
                 <ul class="pagination pagination-sm mt-3">
-                   <li class="page-item"><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/?page=<?=  prevPage($page) ?>">&laquo;</a></li>
-                   <li class="page-item "><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/?page=<?=  nextPage($limit, count($duomenys), $page) ?>">&raquo;</a></li>
+                   <li class="page-item"><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/<?= isset($_GET['filtras']) ? '?filtras=' . $_GET['filtras'] . '&' : '?' ?>page=<?=  prevPage($page) ?>">&laquo;</a></li>
+                   <li class="page-item "><a  class="page-link bg-secondary text-white" href="http://localhost/03_paskaita_20180212/<?= isset($_GET['filtras']) ? '?filtras=' . $_GET['filtras'] . '&' : '?' ?>page=<?=  nextPage($limit, count($duomenys), $page) ?>">&raquo;</a></li>
                 </ul>
             </nav>
 
-              <table class="table table-sm table-bordered table-striped table-hover">
+              <table class="table table-sm table-bordered table-striped table-hover ">
               <thead>
                 <tr>
                   <th>Data</th>
@@ -78,9 +77,11 @@ require_once 'dbRadarEdit.php';
                     <td><?= $irasas->duokGreiti() ?></td>
                     <form class="row">
                         <td scope="row">
-                        <button type=“submit" class= "btn btn-danger" name="delete" value="<?=$irasas->getId() ?>" >Delete</button>
-                        <button type=“submit" class= "btn btn-secondary" name="edit" value="<?=$irasas->getId() ?>" >Edit</button>
-                    </td>
+                            <input type="hidden" name="page" value="<?= $page ?>">
+                            <input type="hidden" name="filtras" value="<?= isset($_GET['filtras']) ? $_GET['filtras'] : '' ?>">
+                            <button type=“submit" class= "btn btn-danger" name="delete" value="<?=$irasas->getId() ?>" >Delete</button>
+                            <button type=“submit" class= "btn btn-secondary" name="edit" value="<?=$irasas->getId() ?>" >Edit</button>
+                        </td>
                     </form>
                    </tr>
                <?php } ?>

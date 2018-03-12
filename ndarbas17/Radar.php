@@ -43,6 +43,6 @@ class Radar
      * @return int
      */
     public function getId() {
-        return intval($this->id);
+        return intval($this->id,  10);
     }
 }
