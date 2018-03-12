@@ -14,10 +14,11 @@ class Radar
     /**
      * Radar constructor.
      *
+     * @param         int $id
      * @param DateTime $date
-     * @param int      $number
-     * @param int      $distance
-     * @param int      $time
+     * @param         string $number
+     * @param         int $distance
+     * @param         int $time
      */
     public function __construct($id, \DateTime $date, $number, $distance, $time)
     {
@@ -43,6 +44,6 @@ class Radar
      * @return int
      */
     public function getId() {
-        return intval($this->id,  10);
+        return $this->id;
     }
 }

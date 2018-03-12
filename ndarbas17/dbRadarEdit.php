@@ -40,7 +40,7 @@ if (isset($_POST['data'], $_POST['numeris'], $_POST['atstumas'], $_POST['laikas'
 
 if (getElemExist('edit') || getElemExist('delete') ) {
 
-        $idd = intval (getElemExist('edit') ? $_GET['edit'] : $_GET['delete'],10);
+        $idd = (int) getElemExist('edit') ? $_GET['edit'] : $_GET['delete'];
 
         if ( count($autoM = getRow($dbh, $idd)) > 0) {
 

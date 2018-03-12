@@ -35,7 +35,7 @@ function prevPage($page) {
  */
 function getPage() {
     if (!getElemExist('filtras')) {
-        return intval (isset($_GET['page']) ? $_GET['page']  : 1, 10);
+        return (int) isset($_GET['page']) ? $_GET['page']  : 1;
     }
     return 1;
 }
